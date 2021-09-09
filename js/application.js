@@ -86,16 +86,17 @@ var updateShoppingCart = function () {
     $('#totalPrice').html(totalSum);
   }
 
-
 var totalProductPrice = function (ele) {
   var sharesOwned = parseFloat($(ele).find('.unitPrice').text());
   var marketPrice = parseFloat($(ele).find('.quantity input').val());
   var totalProductPrice = sharesOwned * marketPrice;
-  $(ele).children('.totalProductPrice').html("$ " + totalProductPrice);
+  if (isNaN(totalProductPrice)) {
+    $(ele).children('.totalProductPrice').html("$ " + 0);
+  } else {
+    $(ele).children('.totalProductPrice').html("$ " + totalProductPrice);}
   console.log(sharesOwned);
   console.log(marketPrice);
 
   return totalProductPrice;
-
 }
 
