@@ -94,9 +94,8 @@ var totalProductPrice = function (ele) {
     $(ele).children('.totalProductPrice').html("$ " + 0);
   } else {
     $(ele).children('.totalProductPrice').html("$ " + totalProductPrice);}
-  console.log(sharesOwned);
-  console.log(marketPrice);
+  
+    return totalProductPrice;
+  }
 
-  return totalProductPrice;
-}
 
