@@ -14,11 +14,6 @@
 // }
 
 
-
-
-
-
-
 $(document).ready(function () {
 updateShoppingCart();
 
@@ -89,12 +84,15 @@ var updateShoppingCart = function () {
 var totalProductPrice = function (ele) {
   var sharesOwned = parseFloat($(ele).find('.unitPrice').text());
   var marketPrice = parseFloat($(ele).find('.quantity input').val());
-  var totalProductPrice = sharesOwned * marketPrice;
-  if (isNaN(totalProductPrice)) {
+
+  if (isNaN(marketPrice)) {
+    var marketPrice = 0;
+    var totalProductPrice = sharesOwned * marketPrice;
     $(ele).children('.totalProductPrice').html("$ " + 0);
   } else {
-    $(ele).children('.totalProductPrice').html("$ " + totalProductPrice);}
-  
+    var totalProductPrice = sharesOwned * marketPrice;
+    $(ele).children('.totalProductPrice').html("$ " + totalProductPrice);
+  }
     return totalProductPrice;
   }
 

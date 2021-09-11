@@ -16,3 +16,7 @@ h1 {
   padding-left: 200px;
 }
 
+form {
+  width: 100%;
+  justify-content: space-between;
+}
